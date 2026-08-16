@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book an Appointment | VisionCare Eye Hospital</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* ================= APPOINTMENT HERO ================= */
+
+        .appointment-hero {
+            padding: 80px 7%;
+            background: #f3fbfa;
+            text-align: center;
+        }
+
+        .appointment-hero h1 {
+            font-size: clamp(45px, 5vw, 68px);
+            line-height: 1.05;
+            color: #01103a;
+            margin: 20px 0;
+        }
+
+        .appointment-hero h1 span {
+            color: #167d73;
+        }
+
+        .appointment-hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #526887;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* ================= APPOINTMENT FORM ================= */
+
+        .appointment-section {
+            padding: 80px 7%;
+        }
+
+        .appointment-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .appointment-box {
+            background: #ffffff;
+            border: 1px solid #e1ecea;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(1, 16, 58, 0.08);
+        }
+
+        .appointment-box h2 {
+            color: #01103a;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .appointment-box-intro {
+            color: #64758f;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .appointment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .appointment-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .appointment-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .appointment-field label {
+            color: #01103a;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .appointment-field input,
+        .appointment-field select,
+        .appointment-field textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d6e4e2;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            color: #01103a;
+            background: #ffffff;
+            outline: none;
+            transition: 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .appointment-field input:focus,
+        .appointment-field select:focus,
+        .appointment-field textarea:focus {
+            border-color: #167d73;
+            box-shadow: 0 0 0 3px rgba(22, 125, 115, 0.08);
+        }
+
+        .appointment-field textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+
+        /* ================= AVAILABILITY ================= */
+
+        .availability-message {
+            padding: 15px 18px;
+            border-radius: 10px;
+            background: #f3fbfa;
+            color: #167d73;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .availability-message.warning {
+            background: #fff7ed;
+            color: #b45309;
+        }
+
+
+        /* ================= SUMMARY ================= */
+
+        .appointment-summary {
+            margin-top: 10px;
+            padding: 22px;
+            border-radius: 15px;
+            background: #f3fbfa;
+            border-left: 4px solid #167d73;
+        }
+
+        .appointment-summary h3 {
+            margin: 0 0 12px;
+            color: #01103a;
+        }
+
+        .appointment-summary p {
+            margin: 6px 0;
+            color: #526887;
+        }
+
+
+        /* ================= SUBMIT ================= */
+
+        .appointment-submit {
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+            margin-top: 10px;
+        }
+
+
+        /* ================= SUCCESS ================= */
+
+        .appointment-success {
+            display: none;
+            text-align: center;
+            padding: 45px 25px;
+        }
+
+        .appointment-success-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #dff4f1;
+            color: #167d73;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .appointment-success h2 {
+            color: #01103a;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .appointment-success p {
+            color: #526887;
+            line-height: 1.8;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            .appointment-section {
+                padding: 60px 5%;
+            }
+
+            .appointment-box {
+                padding: 30px 22px;
+            }
+
+            .appointment-row {
+                grid-template-columns: 1fr;
+            }
+
+            .appointment-submit {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                <img
+                    src="assets/images/general/visioncare-logo.png"
+                    alt="VisionCare Eye Hospital"
+                >
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+
+                <!-- Services -->
+
+                <div class="nav-dropdown">
+
+                    <a href="services.html">
+                        Services
+                        <span class="chevron"></span>
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="eye-examination.html">
+                            Eye Examination
+                        </a>
+
+                        <a href="cataract-care.html">
+                            Cataract Care
+                        </a>
+
+                        <a href="glaucoma-care.html">
+                            Glaucoma Care
+                        </a>
+
+                        <a href="lasik-care.html">
+                            LASIK & Refractive Care
+                        </a>
+
+                        <a href="retina-care.html">
+                            Retina Care
+                        </a>
+
+                        <a href="pediatric-eye-care.html">
+                            Pediatric Eye Care
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Doctors -->
+
+                <div class="nav-dropdown">
+
+                    <a href="doctors.html">
+                        Doctors
+                        <span class="chevron"></span>
+                    </a>
+
+                    <div class="dropdown-menu">
+                    <a href="doctors.html">Our Specialists</a>
+                    <a href="arjun-mehta.html">Dr. Arjun Mehta</a>
+                    <a href="ananya-rao.html">Dr. Ananya Rao</a>
+                    <a href="rohan-kapoor.html">Dr. Rohan Kapoor</a>
+                    <a href="meera-sharma.html">Dr. Meera Sharma</a>
+                </div>
+                </div>
+
+
+                <a href="#" class="contact-trigger">
+                    Contact
+                </a>
+
+                <a
+                    href="appointment.html"
+                    class="nav-btn"
+                >
+                    Book Appointment
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= CONTACT POPUP ================= -->
+
+    <div class="contact-modal" id="contactModal">
+
+        <div class="contact-modal-box">
+
+            <button
+                class="contact-close"
+                id="contactClose"
+            >
+                &times;
+            </button>
+
+
+            <div class="contact-modal-header">
+
+                <span class="section-label">
+                    GET IN TOUCH
+                </span>
+
+                <h2>
+                    Leave Us a
+                    <span>Message.</span>
+                </h2>
+
+                <p>
+                    Have a question or need help?
+                    Leave us a message and our team
+                    will get back to you shortly.
+                </p>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <div class="contact-form-row">
+
+                    <div class="contact-field">
+
+                        <label for="contactName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="contact-field">
+
+                        <label for="contactEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-field">
+
+                    <label for="contactMessage">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="contactMessage"
+                        rows="4"
+                        placeholder="How can we help you?"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="appointment-hero">
+
+        <span class="section-label">
+            BOOK YOUR VISIT
+        </span>
+
+        <h1>
+            Your Vision.
+            <span>Your Appointment.</span>
+        </h1>
+
+        <p>
+            Choose your service, select a specialist,
+            find an available date and time, and book
+            your appointment with VisionCare.
+        </p>
+
+    </section>
+
+
+    <!-- ================= APPOINTMENT FORM ================= -->
+
+    <section class="appointment-section">
+
+        <div class="appointment-container">
+
+            <div class="appointment-box">
+
+                <div id="appointmentFormWrapper">
+
+                    <span class="section-label">
+                        APPOINTMENT DETAILS
+                    </span>
+
+                    <h2>
+                        Schedule Your Visit
+                    </h2>
+
+                    <p class="appointment-box-intro">
+                        Select a service and specialist to see
+                        their available appointment dates and times.
+                    </p>
+
+
+                    <form
+                        class="appointment-form"
+                        id="appointmentForm"
+                    >
+
+
+                        <!-- Service + Doctor -->
+
+                        <div class="appointment-row">
+
+
+                            <div class="appointment-field">
+
+                                <label for="service">
+                                    Select Service
+                                </label>
+
+                                <select id="service" required>
+
+                                    <option value="">
+                                        Select a service
+                                    </option>
+
+                                    <option value="eye-examination">
+                                        Eye Examination
+                                    </option>
+
+                                    <option value="cataract">
+                                        Cataract Care
+                                    </option>
+
+                                    <option value="glaucoma">
+                                        Glaucoma Care
+                                    </option>
+
+                                    <option value="lasik">
+                                        LASIK & Refractive Care
+                                    </option>
+
+                                    <option value="retina">
+                                        Retina Care
+                                    </option>
+
+                                    <option value="pediatric">
+                                        Pediatric Eye Care
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="appointment-field">
+
+                                <label for="doctor">
+                                    Select Doctor
+                                </label>
+
+                                <select id="doctor" required>
+
+                                    <option value="">
+                                        Select a doctor
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Date + Time -->
+
+                        <div class="appointment-row">
+
+
+                            <div class="appointment-field">
+
+                                <label for="appointmentDate">
+                                    Preferred Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="appointmentDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="appointment-field">
+
+                                <label for="appointmentTime">
+                                    Available Time
+                                </label>
+
+                                <select
+                                    id="appointmentTime"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select date first
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="availability-message"
+                            id="availabilityMessage"
+                        >
+                            Select a doctor to see their availability.
+                        </div>
+
+
+                        <!-- Patient Information -->
+
+                        <span class="section-label">
+                            PATIENT INFORMATION
+                        </span>
+
+
+                        <div class="appointment-row">
+
+
+                            <div class="appointment-field">
+
+                                <label for="patientName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="patientName"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="appointment-field">
+
+                                <label for="patientAge">
+                                    Age
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="patientAge"
+                                    min="1"
+                                    max="120"
+                                    placeholder="Enter age"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-row">
+
+
+                            <div class="appointment-field">
+
+                                <label for="patientPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="patientPhone"
+                                    placeholder="+91 XXXXX XXXXX"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="appointment-field">
+
+                                <label for="patientEmail">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="patientEmail"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-field">
+
+                            <label for="patientNotes">
+                                Additional Notes
+                                <span>(Optional)</span>
+                            </label>
+
+                            <textarea
+                                id="patientNotes"
+                                placeholder="Tell us anything you'd like the doctor to know..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- Summary -->
+
+                        <div class="appointment-summary">
+
+                            <h3>
+                                Appointment Summary
+                            </h3>
+
+                            <p>
+                                Service:
+                                <strong id="summaryService">
+                                    Not selected
+                                </strong>
+                            </p>
+
+                            <p>
+                                Doctor:
+                                <strong id="summaryDoctor">
+                                    Not selected
+                                </strong>
+                            </p>
+
+                            <p>
+                                Date:
+                                <strong id="summaryDate">
+                                    Not selected
+                                </strong>
+                            </p>
+
+                            <p>
+                                Time:
+                                <strong id="summaryTime">
+                                    Not selected
+                                </strong>
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn appointment-submit"
+                        >
+                            Confirm Appointment
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- SUCCESS MESSAGE -->
+
+                <div
+                    class="appointment-success"
+                    id="appointmentSuccess"
+                >
+
+                    <div class="appointment-success-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Appointment Request Received!
+                    </h2>
+
+                    <p>
+                        Thank you for choosing VisionCare.
+                        Your appointment request has been recorded.
+                        Our team will contact you shortly to confirm
+                        your appointment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <img
+                    src="assets/images/general/visioncare-logo.png"
+                    alt="VisionCare Eye Hospital"
+                >
+
+                <p class="footer-tagline">
+                    Clear Vision. Better Life.
+                </p>
+
+                <p>
+                    Trusted eye care focused on advanced treatment,
+                    compassionate service, and healthier vision
+                    for every patient.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="#">f</a>
+                    <a href="#">◎</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">▶</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Our Services
+                </a>
+
+                <a href="doctors.html">
+                    Our Doctors
+                </a>
+
+                <a href="appointment.html">
+                    Book Appointment
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+            <h3>Eye Care</h3>
+
+            <a href="eye-examination.html">Eye Examination</a>
+            <a href="cataract-care.html">Cataract Care</a>
+            <a href="glaucoma-care.html">Glaucoma Care</a>
+            <a href="lasik-care.html">LASIK & Refractive Care</a>
+            <a href="retina-care.html">Retina Care</a>
+            <a href="pediatric-eye-care.html">Pediatric Eye Care</a>
+        </div>
+
+
+            <!-- Contact -->
+
+            <div class="footer-column footer-contact">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ care@visioncare.com
+                </p>
+
+                <p>
+                    📍 VisionCare Eye Hospital,
+                    <br>
+                    New Delhi, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 VisionCare Eye Hospital.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="assets/js/script.js"></script>
+
+    <script>
+
+        /* =====================================================
+           APPOINTMENT DATA
+        ===================================================== */
+
+        const doctors = {
+
+            arjun: {
+                name: "Dr. Arjun Mehta",
+                services: ["eye-examination", "cataract", "lasik"]
+            },
+
+            ananya: {
+                name: "Dr. Ananya Rao",
+                services: ["eye-examination", "cataract"]
+            },
+
+            rohan: {
+                name: "Dr. Rohan Kapoor",
+                services: ["eye-examination", "glaucoma"]
+            },
+
+            meera: {
+                name: "Dr. Meera Sharma",
+                services: ["retina", "pediatric", "eye-examination"]
+            }
+
+        };
+
+
+        const services = {
+
+            "eye-examination": {
+                name: "Eye Examination",
+                doctors: ["arjun", "ananya", "rohan", "meera"]
+            },
+
+            "cataract": {
+                name: "Cataract Care",
+                doctors: ["arjun", "ananya"]
+            },
+
+            "glaucoma": {
+                name: "Glaucoma Care",
+                doctors: ["rohan"]
+            },
+
+            "lasik": {
+                name: "LASIK & Refractive Care",
+                doctors: ["arjun"]
+            },
+
+            "retina": {
+                name: "Retina Care",
+                doctors: ["meera"]
+            },
+
+            "pediatric": {
+                name: "Pediatric Eye Care",
+                doctors: ["meera"]
+            }
+
+        };
+
+
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
+
+        const serviceSelect =
+            document.getElementById("service");
+
+        const doctorSelect =
+            document.getElementById("doctor");
+
+        const dateInput =
+            document.getElementById("appointmentDate");
+
+        const timeSelect =
+            document.getElementById("appointmentTime");
+
+        const availabilityMessage =
+            document.getElementById("availabilityMessage");
+
+        const summaryService =
+            document.getElementById("summaryService");
+
+        const summaryDoctor =
+            document.getElementById("summaryDoctor");
+
+        const summaryDate =
+            document.getElementById("summaryDate");
+
+        const summaryTime =
+            document.getElementById("summaryTime");
+
+        const appointmentForm =
+            document.getElementById("appointmentForm");
+
+        const appointmentFormWrapper =
+            document.getElementById("appointmentFormWrapper");
+
+        const appointmentSuccess =
+            document.getElementById("appointmentSuccess");
+
+
+        /* =====================================================
+           URL PARAMETERS
+        ===================================================== */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const preselectedService =
+            params.get("service");
+
+        const preselectedDoctor =
+            params.get("doctor");
+
+
+        /* =====================================================
+           HELPER — POPULATE DOCTORS
+        ===================================================== */
+
+        function populateDoctors(serviceKey = "") {
+
+            doctorSelect.innerHTML =
+                '<option value="">Select a doctor</option>';
+
+
+            let doctorIds =
+                Object.keys(doctors);
+
+
+            if (serviceKey && services[serviceKey]) {
+
+                doctorIds =
+                    services[serviceKey].doctors;
+
+            }
+
+
+            doctorIds.forEach(function (doctorId) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value = doctorId;
+
+                option.textContent =
+                    doctors[doctorId].name;
+
+                doctorSelect.appendChild(option);
+
+            });
+
+        }
+
+
+        /* =====================================================
+           HELPER — POPULATE SERVICES
+        ===================================================== */
+
+        function populateServices(doctorId = "") {
+
+            serviceSelect.innerHTML =
+                '<option value="">Select a service</option>';
+
+
+            let serviceKeys =
+                Object.keys(services);
+
+
+            if (doctorId && doctors[doctorId]) {
+
+                serviceKeys =
+                    doctors[doctorId].services;
+
+            }
+
+
+            serviceKeys.forEach(function (serviceKey) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value = serviceKey;
+
+                option.textContent =
+                    services[serviceKey].name;
+
+                serviceSelect.appendChild(option);
+
+            });
+
+        }
+
+
+        /* =====================================================
+           SERVICE CHANGED
+        ===================================================== */
+
+        serviceSelect.addEventListener(
+            "change",
+            function () {
+
+                const selectedService =
+                    this.value;
+
+
+                populateDoctors(
+                    selectedService
+                );
+
+
+                doctorSelect.value = "";
+
+
+                if (selectedService) {
+
+                    const availableDoctors =
+                        services[selectedService].doctors;
+
+                    if (availableDoctors.length === 1) {
+
+                        doctorSelect.value =
+                            availableDoctors[0];
+
+                        updateDoctorSelection();
+
+                    }
+
+                }
+
+
+                updateSummary();
+
+            }
+        );
+
+
+        /* =====================================================
+           DOCTOR CHANGED
+        ===================================================== */
+
+        doctorSelect.addEventListener(
+            "change",
+            function () {
+
+                updateDoctorSelection();
+
+            }
+        );
+
+
+        function updateDoctorSelection() {
+
+            const selectedDoctor =
+                doctorSelect.value;
+
+
+            if (!selectedDoctor) {
+
+                populateServices(
+                    serviceSelect.value
+                );
+
+                availabilityMessage.textContent =
+                    "Select a doctor to see their availability.";
+
+                availabilityMessage.classList.remove(
+                    "warning"
+                );
+
+                timeSelect.innerHTML =
+                    '<option value="">Select date first</option>';
+
+                updateSummary();
+
+                return;
+
+            }
+
+
+            const doctor =
+                doctors[selectedDoctor];
+
+
+            /* Keep current service if doctor supports it */
+
+            if (
+                serviceSelect.value &&
+                doctor.services.includes(
+                    serviceSelect.value
+                )
+            ) {
+
+                // Keep current service
+
+            } else {
+
+                populateServices(
+                    selectedDoctor
+                );
+
+                serviceSelect.value =
+                    doctor.services[0];
+
+            }
+
+
+            availabilityMessage.textContent =
+                `${doctor.name} is available on selected working days.`;
+
+            availabilityMessage.classList.remove(
+                "warning"
+            );
+
+
+            timeSelect.innerHTML =
+                '<option value="">Select date first</option>';
+
+
+            updateSummary();
+
+        }
+
+
+        /* =====================================================
+           DATE AVAILABILITY
+        ===================================================== */
+
+        dateInput.addEventListener(
+            "change",
+            function () {
+
+                const selectedDoctor =
+                    doctorSelect.value;
+
+                const selectedDate =
+                    this.value;
+
+
+                if (
+                    !selectedDoctor ||
+                    !selectedDate
+                ) {
+
+                    timeSelect.innerHTML =
+                        '<option value="">Select date first</option>';
+
+                    return;
+
+                }
+
+
+                const date =
+                    new Date(
+                        selectedDate + "T00:00:00"
+                    );
+
+
+                const day =
+                    date.getDay();
+
+
+                /*
+                    0 = Sunday
+                    1 = Monday
+                    2 = Tuesday
+                    3 = Wednesday
+                    4 = Thursday
+                    5 = Friday
+                    6 = Saturday
+                */
+
+
+                timeSelect.innerHTML =
+                    '<option value="">Select a time</option>';
+
+
+                let slots = [];
+
+
+                if (day === 0) {
+
+                    slots = [];
+
+                } else if (day === 6) {
+
+                    slots = [
+                        "10:00 AM",
+                        "11:00 AM",
+                        "12:00 PM"
+                    ];
+
+                } else {
+
+                    slots = [
+                        "10:00 AM",
+                        "11:00 AM",
+                        "12:00 PM",
+                        "02:00 PM",
+                        "03:00 PM",
+                        "04:00 PM"
+                    ];
+
+                }
+
+
+                if (slots.length === 0) {
+
+                    availabilityMessage.textContent =
+                        "This doctor is not available on this date. Please choose another date.";
+
+                    availabilityMessage.classList.add(
+                        "warning"
+                    );
+
+                } else {
+
+                    availabilityMessage.textContent =
+                        `${doctors[selectedDoctor].name} has appointments available on this date.`;
+
+                    availabilityMessage.classList.remove(
+                        "warning"
+                    );
+
+
+                    slots.forEach(function (slot) {
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value = slot;
+
+                        option.textContent = slot;
+
+                        timeSelect.appendChild(option);
+
+                    });
+
+                }
+
+
+                updateSummary();
+
+            }
+        );
+
+
+        /* =====================================================
+           TIME CHANGED
+        ===================================================== */
+
+        timeSelect.addEventListener(
+            "change",
+            updateSummary
+        );
+
+
+        /* =====================================================
+           SUMMARY
+        ===================================================== */
+
+        function updateSummary() {
+
+            const serviceValue =
+                serviceSelect.value;
+
+            const doctorValue =
+                doctorSelect.value;
+
+            const dateValue =
+                dateInput.value;
+
+            const timeValue =
+                timeSelect.value;
+
+
+            summaryService.textContent =
+                serviceValue && services[serviceValue]
+                    ? services[serviceValue].name
+                    : "Not selected";
+
+
+            summaryDoctor.textContent =
+                doctorValue && doctors[doctorValue]
+                    ? doctors[doctorValue].name
+                    : "Not selected";
+
+
+            if (dateValue) {
+
+                const date =
+                    new Date(
+                        dateValue + "T00:00:00"
+                    );
+
+                summaryDate.textContent =
+                    date.toLocaleDateString(
+                        "en-IN",
+                        {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    );
+
+            } else {
+
+                summaryDate.textContent =
+                    "Not selected";
+
+            }
+
+
+            summaryTime.textContent =
+                timeValue || "Not selected";
+
+        }
+
+
+        /* =====================================================
+           URL PRESELECTION
+        ===================================================== */
+
+        function applyPreselection() {
+
+            /*
+                Direct appointment page:
+                everything remains empty.
+            */
+
+            if (
+                !preselectedService &&
+                !preselectedDoctor
+            ) {
+
+                populateDoctors();
+
+                return;
+
+            }
+
+
+            /*
+                Service was selected from a service page.
+            */
+
+            if (
+                preselectedService &&
+                services[preselectedService]
+            ) {
+
+                populateDoctors(
+                    preselectedService
+                );
+
+                serviceSelect.value =
+                    preselectedService;
+
+            }
+
+
+            /*
+                Doctor was selected from a doctor page.
+            */
+
+            if (
+                preselectedDoctor &&
+                doctors[preselectedDoctor]
+            ) {
+
+                populateServices(
+                    preselectedDoctor
+                );
+
+                doctorSelect.innerHTML =
+                    '<option value="">Select a doctor</option>';
+
+                const doctorOption =
+                    document.createElement("option");
+
+                doctorOption.value =
+                    preselectedDoctor;
+
+                doctorOption.textContent =
+                    doctors[preselectedDoctor].name;
+
+                doctorSelect.appendChild(
+                    doctorOption
+                );
+
+                doctorSelect.value =
+                    preselectedDoctor;
+
+
+                /*
+                    If a service was also passed,
+                    keep that service.
+                */
+
+                if (
+                    preselectedService &&
+                    doctors[preselectedDoctor].services.includes(
+                        preselectedService
+                    )
+                ) {
+
+                    serviceSelect.value =
+                        preselectedService;
+
+                } else {
+
+                    serviceSelect.value =
+                        doctors[preselectedDoctor].services[0];
+
+                }
+
+                updateDoctorSelection();
+
+            }
+
+        }
+
+        /* =====================================================
+   FORM SUBMISSION + LOCAL STORAGE
+===================================================== */
+
+appointmentForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        /* Get selected values */
+
+        const selectedService =
+            serviceSelect.value;
+
+        const selectedDoctor =
+            doctorSelect.value;
+
+        const selectedDate =
+            dateInput.value;
+
+        const selectedTime =
+            timeSelect.value;
+
+
+        /* Get patient information */
+
+        const patientName =
+            document.getElementById("patientName").value.trim();
+
+        const patientAge =
+            document.getElementById("patientAge").value;
+
+        const patientPhone =
+            document.getElementById("patientPhone").value.trim();
+
+        const patientEmail =
+            document.getElementById("patientEmail").value.trim();
+
+        const patientNotes =
+            document.getElementById("patientNotes").value.trim();
+
+
+        /* Create appointment object */
+
+        const appointment = {
+
+            id: Date.now(),
+
+            patientName: patientName,
+
+            age: patientAge,
+
+            phone: patientPhone,
+
+            email: patientEmail,
+
+            notes: patientNotes,
+
+            service: services[selectedService].name,
+
+            doctor: doctors[selectedDoctor].name,
+
+            date: selectedDate,
+
+            time: selectedTime,
+
+            bookedAt: new Date().toISOString()
+
+        };
+
+
+        /* Get existing appointments */
+
+        const existingAppointments =
+            JSON.parse(
+                localStorage.getItem("visionCareAppointments")
+            ) || [];
+
+
+        /* Add new appointment */
+
+        existingAppointments.push(
+            appointment
+        );
+
+
+        /* Save appointments */
+
+        localStorage.setItem(
+            "visionCareAppointments",
+            JSON.stringify(existingAppointments)
+        );
+
+
+        /* Show success message */
+
+        appointmentFormWrapper.style.display =
+            "none";
+
+        appointmentSuccess.style.display =
+            "block";
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+        /* =====================================================
+           INITIALISE
+        ===================================================== */
+
+        applyPreselection();
+
+        updateSummary();
+
+    </script>
+
+</body>
+
+</html>

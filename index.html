@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="nav-logo">
+            <img src="assets/images/general/visioncare-logo.png" alt="VisionCare Eye Hospital">
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <div class="nav-dropdown">
+                <a href="services.html">Services <span class="chevron"></span></a>
+
+                <div class="dropdown-menu">
+                    <a href="eye-examination.html">Eye Examination</a>
+                    <a href="cataract-care.html">Cataract Care</a>
+                    <a href="glaucoma-care.html">Glaucoma Care</a>
+                    <a href="lasik-care.html">LASIK & Refractive Care</a>
+                    <a href="retina-care.html">Retina Care</a>
+                    <a href="pediatric-eye-care.html">Pediatric Eye Care</a>
+                </div>
+            </div>
+
+
+
+                <div class="nav-dropdown">
+
+                    <a href="doctors.html">
+                        Doctors
+                        <span class="chevron"></span>
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="doctors.html">
+                            Our Specialists
+                        </a>
+
+                        <a href="arjun-mehta.html">
+                            Dr. Arjun Mehta
+                        </a>
+
+                        <a href="ananya-rao.html">
+                            Dr. Ananya Rao
+                        </a>
+
+                        <a href="rohan-kapoor.html">
+                            Dr. Rohan Kapoor
+                        </a>
+
+                        <a href="meera-sharma.html">
+                            Dr. Meera Sharma
+                        </a>
+
+                    </div>
+
+            </div>
+
+            <a href="#" class="contact-trigger">Contact</a>
+
+            <a href="appointment.html" class="nav-btn">
+                Book Appointment
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+<!-- Contact Popup -->
+<div class="contact-modal" id="contactModal">
+
+    <div class="contact-modal-box">
+
+        <button class="contact-close" id="contactClose">
+            &times;
+        </button>
+
+        <div class="contact-modal-header">
+            <span class="section-label">GET IN TOUCH</span>
+
+            <h2>
+                Leave Us a
+                <span>Message.</span>
+            </h2>
+
+            <p>
+                Have a question or need help? Leave us a message
+                and our team will get back to you shortly.
+            </p>
+        </div>
+
+        <form class="contact-form">
+
+            <div class="contact-form-row">
+
+                <div class="contact-field">
+                    <label for="contactName">Your Name</label>
+                    <input
+                        type="text"
+                        id="contactName"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="contact-field">
+                    <label for="contactEmail">Email Address</label>
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="contact-field">
+                <label for="contactMessage">Your Message</label>
+
+                <textarea
+                    id="contactMessage"
+                    rows="4"
+                    placeholder="How can we help you?"
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VisionCare Eye Hospital</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">ADVANCED EYE CARE</p>
+
+            <h1>
+                See the World<br>
+                <span>More Clearly.</span>
+            </h1>
+
+            <p class="hero-text">
+                Compassionate eye care combined with advanced technology
+                to protect and improve your vision.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="appointment.html" class="primary-btn">
+                    Book an Appointment
+                </a>
+
+                <a href="services.html" class="secondary-btn">
+                    Explore Our Services
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+
+        <p class="section-label">WELCOME TO VISIONCARE</p>
+
+        <h2>
+            Your Vision Deserves
+            <span>Expert Care.</span>
+        </h2>
+
+        <p>
+            At VisionCare Eye Hospital, we combine experienced specialists,
+            modern technology, and compassionate care to provide complete
+            eye health solutions for you and your family.
+        </p>
+
+    </section>
+
+
+    <!-- Services Preview -->
+    <section class="home-services">
+
+        <div class="section-heading">
+            <p class="section-label">OUR SPECIALITIES</p>
+
+            <h2>Complete Care for <span>Every Vision.</span></h2>
+
+            <p>
+                From routine examinations to advanced treatments,
+                we're here for every stage of your eye care journey.
+            </p>
+        </div>
+
+        <div class="service-cards">
+
+            <a href="services.html#eye-examination" class="service-card">
+                <img src="assets/images/services/eye-examination-room.png"
+                     alt="Eye Examination">
+                <h3>Eye Examination</h3>
+                <p>Comprehensive vision and eye health assessments.</p>
+            </a>
+
+            <a href="services.html#cataract" class="service-card">
+                <img src="assets/images/services/cataract-care.png"
+                     alt="Cataract Care">
+                <h3>Cataract Care</h3>
+                <p>Modern treatment for clearer, healthier vision.</p>
+            </a>
+
+            <a href="services.html#glaucoma" class="service-card">
+                <img src="assets/images/services/glaucoma-care.png"
+                     alt="Glaucoma Care">
+                <h3>Glaucoma Care</h3>
+                <p>Early detection and specialised glaucoma management.</p>
+            </a>
+
+            <a href="services.html#lasik" class="service-card">
+                <img src="assets/images/services/lasik-care.png"
+                     alt="LASIK Care">
+                <h3>LASIK & Refractive Care</h3>
+                <p>Advanced options for reducing dependence on glasses.</p>
+            </a>
+
+        </div>
+
+        <a href="services.html" class="view-all-btn">
+            View All Services →
+        </a>
+
+    </section>
+
+
+    <!-- Why VisionCare -->
+    <section class="why-section">
+
+        <div class="why-image">
+            <img src="assets/images/services/eye-examination-room.png"
+                 alt="VisionCare Eye Examination Room">
+        </div>
+
+        <div class="why-content">
+
+            <p class="section-label">WHY VISIONCARE</p>
+
+            <h2>
+                Care That Looks
+                <span>Beyond Your Eyes.</span>
+            </h2>
+
+            <p>
+                Your vision is personal. That's why our approach combines
+                medical expertise with genuine attention to every patient.
+            </p>
+
+            <div class="why-points">
+                <div>
+                    <strong>01</strong>
+                    <span>Experienced Specialists</span>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <span>Advanced Eye Care Technology</span>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <span>Patient-Centred Treatment</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Doctors Preview -->
+    <section class="doctors-preview">
+
+        <div class="section-heading">
+            <p class="section-label">OUR SPECIALISTS</p>
+
+            <h2>Meet Our <span>Expert Doctors.</span></h2>
+
+            <p>
+                Skilled specialists dedicated to helping you see better
+                and live better.
+            </p>
+        </div>
+
+        <div class="doctor-mini-cards">
+
+            <div class="doctor-mini-card">
+                <img src="assets/images/doctors/dr-arjun-mehta.png"
+                     alt="Dr. Arjun Mehta">
+                <h3>Dr. Arjun Mehta</h3>
+                <p>Cataract & Refractive Specialist</p>
+            </div>
+
+            <div class="doctor-mini-card">
+                <img src="assets/images/doctors/dr-ananya-rao.png"
+                     alt="Dr. Ananya Rao">
+                <h3>Dr. Ananya Rao</h3>
+                <p>Glaucoma Specialist</p>
+            </div>
+
+            <div class="doctor-mini-card">
+                <img src="assets/images/doctors/dr-rohan-kapoor.png"
+                     alt="Dr. Rohan Kapoor">
+                <h3>Dr. Rohan Kapoor</h3>
+                <p>Retina Specialist</p>
+            </div>
+
+            <div class="doctor-mini-card">
+                <img src="assets/images/doctors/dr-meera-sharma.png"
+                     alt="Dr. Meera Sharma">
+                <h3>Dr. Meera Sharma</h3>
+                <p>Pediatric Ophthalmologist</p>
+            </div>
+
+        </div>
+
+        <a href="doctors.html" class="view-all-btn">
+            Meet All Doctors →
+        </a>
+
+    </section>
+
+
+    <!-- Appointment CTA -->
+    <section class="appointment-cta">
+
+        <div>
+            <p class="section-label">YOUR VISION MATTERS</p>
+
+            <h2>Ready to See a<br><span>Clearer Tomorrow?</span></h2>
+
+            <p>
+                Take the first step towards healthier vision.
+                Book your consultation with our specialists today.
+            </p>
+        </div>
+
+        <a href="appointment.html" class="primary-btn">
+            Book Your Appointment
+        </a>
+
+    </section>
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <img src="assets/images/general/visioncare-logo.png"
+                 alt="VisionCare Eye Hospital">
+
+            <p class="footer-tagline">
+                Clear Vision. Better Life.
+            </p>
+
+            <p>
+                Trusted eye care focused on advanced treatment,
+                compassionate service, and healthier vision for every patient.
+            </p>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+        </div>
+
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="doctors.html">Our Doctors</a>
+            <a href="appointment.html">Book Appointment</a>
+        </div>
+
+
+        <!-- Eye Care -->
+        <div class="footer-column">
+            <h3>Eye Care</h3>
+
+            <a href="eye-examination.html">Eye Examination</a>
+            <a href="cataract-care.html">Cataract Care</a>
+            <a href="glaucoma-care.html">Glaucoma Care</a>
+            <a href="lasik-care.html">LASIK & Refractive Care</a>
+            <a href="retina-care.html">Retina Care</a>
+            <a href="pediatric-eye-care.html">Pediatric Eye Care</a>
+        </div>
+
+
+        <!-- Contact -->
+        <div class="footer-column footer-contact">
+            <h3>Contact Us</h3>
+
+            <p>📞 +91 98765 43210</p>
+            <p>✉️ care@visioncare.com</p>
+            <p>📍 VisionCare Eye Hospital,<br>
+               New Delhi, India</p>
+        </div>
+
+    </div>
+
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+    <p>© 2026 VisionCare Eye Hospital. All rights reserved.</p>
+</div>
+
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

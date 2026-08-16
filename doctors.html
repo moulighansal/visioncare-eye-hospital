@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Doctors | VisionCare Eye Hospital</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .doctors-hero {
+            min-height: 560px;
+            padding: 90px 7%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: #f3fbfa;
+        }
+
+        .doctors-hero:before {
+            content: "";
+            position: absolute;
+            inset: -25px;
+            background-image: url("assets/images/doctors/doctors-hero.png");
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            transform: scale(1.04);
+            z-index: 0;
+        }
+
+        .doctors-hero:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(243, 251, 250, 0.82);
+            z-index: 1;
+        }
+
+        .doctors-hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .doctors-hero h1 {
+            font-size: clamp(48px, 5vw, 72px);
+            line-height: 1.05;
+            color: #01103a;
+            margin: 20px 0;
+        }
+
+        .doctors-hero h1 span,
+        .doctors-section h2 span {
+            color: #167d73;
+        }
+
+        .doctors-hero p,
+        .doctors-intro {
+            color: #526887;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .doctors-hero p {
+            max-width: 650px;
+        }
+
+        .doctors-hero-image {
+            display: none;
+        }
+
+        .doctors-section {
+            padding: 90px 5%;
+            text-align: center;
+        }
+
+        .doctors-section h2 {
+            font-size: clamp(38px, 4vw, 58px);
+            color: #01103a;
+            margin: 18px 0;
+        }
+
+        .doctors-intro {
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .doctor-grid {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: left;
+        }
+
+        .doctor-card {
+            background: #fff;
+            border: 1px solid #e2eeec;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(1, 16, 58, 0.07);
+            transition: 0.3s;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 38px rgba(1, 16, 58, 0.12);
+        }
+
+        .doctor-card-image {
+            height: 300px;
+            background: #eef7f6;
+        }
+
+        .doctor-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .doctor-card-content {
+            padding: 25px;
+        }
+
+        .doctor-number {
+            color: #16867c;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .doctor-card h3 {
+            margin: 10px 0 7px;
+            color: #01103a;
+            font-size: 25px;
+        }
+
+        .doctor-specialty {
+            color: #16867c;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .doctor-card p {
+            color: #64758f;
+            line-height: 1.7;
+            min-height: 75px;
+        }
+
+        .doctor-profile-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #16867c;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .doctor-cta {
+            margin: 20px 5% 90px;
+            padding: 55px 7%;
+            border-radius: 28px;
+            background: #dff4f1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .doctor-cta h2 {
+            color: #01103a;
+            font-size: clamp(32px, 4vw, 48px);
+            margin: 12px 0;
+        }
+
+        .doctor-cta h2 span {
+            color: #16867c;
+        }
+
+        .doctor-cta p {
+            color: #526887;
+        }
+
+        .doctor-cta .primary-btn {
+            text-decoration: none;
+        }
+
+        @media (max-width: 1000px) {
+            .doctor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .doctors-hero {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .doctor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/general/visioncare-logo.png"
+                     alt="VisionCare Eye Hospital">
+            </a>
+
+            <div class="nav-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+
+                <!-- Services Dropdown -->
+
+                <div class="nav-dropdown">
+
+                    <a href="services.html">
+                        Services
+                        <span class="chevron"></span>
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="eye-examination.html">Eye Examination</a>
+                    <a href="cataract-care.html">Cataract Care</a>
+                    <a href="glaucoma-care.html">Glaucoma Care</a>
+                    <a href="lasik-care.html">LASIK & Refractive Care</a>
+                    <a href="retina-care.html">Retina Care</a>
+                    <a href="pediatric-eye-care.html">Pediatric Eye Care</a>
+                    </div>
+
+                </div>
+
+
+                <!-- Doctors Dropdown -->
+
+                <div class="nav-dropdown">
+
+                    <a href="doctors.html">
+                        Doctors
+                        <span class="chevron"></span>
+                    </a>
+
+                    <div class="dropdown-menu">
+                    <a href="doctors.html">Our Specialists</a>
+                    <a href="arjun-mehta.html">Dr. Arjun Mehta</a>
+                    <a href="ananya-rao.html">Dr. Ananya Rao</a>
+                    <a href="rohan-kapoor.html">Dr. Rohan Kapoor</a>
+                    <a href="meera-sharma.html">Dr. Meera Sharma</a>
+                </div>
+
+                </div>
+
+
+                <a href="#" class="contact-trigger">
+                    Contact
+                </a>
+
+                <a href="appointment.html" class="nav-btn">
+                    Book Appointment
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==================== CONTACT POPUP ==================== -->
+
+    <div class="contact-modal" id="contactModal">
+
+        <div class="contact-modal-box">
+
+            <button class="contact-close" id="contactClose">
+                &times;
+            </button>
+
+            <div class="contact-modal-header">
+
+                <span class="section-label">
+                    GET IN TOUCH
+                </span>
+
+                <h2>
+                    Leave Us a
+                    <span>Message.</span>
+                </h2>
+
+                <p>
+                    Have a question or need help?
+                    Leave us a message and our team
+                    will get back to you shortly.
+                </p>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <div class="contact-form-row">
+
+                    <div class="contact-field">
+
+                        <label for="contactName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="contact-field">
+
+                        <label for="contactEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-field">
+
+                    <label for="contactMessage">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="contactMessage"
+                        rows="4"
+                        placeholder="How can we help you?"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== HERO ==================== -->
+
+    <section class="doctors-hero">
+
+        <div class="doctors-hero-content">
+
+            <span class="section-label">
+                OUR SPECIALISTS
+            </span>
+
+            <h1>
+                Meet the Experts Behind
+                <span>Better Vision.</span>
+            </h1>
+
+            <p>
+                Our experienced specialists combine medical expertise,
+                modern technology, and compassionate care to help every
+                patient see better.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================== DOCTORS SECTION ==================== -->
+
+    <section class="doctors-section">
+
+        <span class="section-label">
+            VISIONCARE SPECIALISTS
+        </span>
+
+        <h2>
+            Care You Can
+            <span>Trust.</span>
+        </h2>
+
+        <p class="doctors-intro">
+            Meet our team of specialists dedicated to providing
+            personalised eye care across diagnosis, treatment,
+            and long-term vision health.
+        </p>
+
+
+        <div class="doctor-grid">
+
+
+            <!-- Dr. Arjun Mehta -->
+
+            <article class="doctor-card">
+
+                <div class="doctor-card-image">
+
+                    <img
+                        src="assets/images/doctors/dr-arjun-mehta.png"
+                        alt="Dr. Arjun Mehta"
+                    >
+
+                </div>
+
+                <div class="doctor-card-content">
+
+                    <span class="doctor-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Dr. Arjun Mehta
+                    </h3>
+
+                    <div class="doctor-specialty">
+                        Ophthalmologist
+                    </div>
+
+                    <p>
+                        Focused on comprehensive eye examinations
+                        and advanced eye care.
+                    </p>
+
+                    <a
+                        href="arjun-mehta.html"
+                        class="doctor-profile-link"
+                    >
+                        View Profile →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Dr. Ananya Rao -->
+
+            <article class="doctor-card">
+
+                <div class="doctor-card-image">
+
+                    <img
+                        src="assets/images/doctors/dr-ananya-rao.png"
+                        alt="Dr. Ananya Rao"
+                    >
+
+                </div>
+
+                <div class="doctor-card-content">
+
+                    <span class="doctor-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Dr. Ananya Rao
+                    </h3>
+
+                    <div class="doctor-specialty">
+                        Cataract Specialist
+                    </div>
+
+                    <p>
+                        Dedicated to cataract evaluation,
+                        treatment, and clearer vision.
+                    </p>
+
+                    <a
+                        href="ananya-rao.html"
+                        class="doctor-profile-link"
+                    >
+                        View Profile →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Dr. Rohan Kapoor -->
+
+            <article class="doctor-card">
+
+                <div class="doctor-card-image">
+
+                    <img
+                        src="assets/images/doctors/dr-rohan-kapoor.png"
+                        alt="Dr. Rohan Kapoor"
+                    >
+
+                </div>
+
+                <div class="doctor-card-content">
+
+                    <span class="doctor-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Dr. Rohan Kapoor
+                    </h3>
+
+                    <div class="doctor-specialty">
+                        Glaucoma Specialist
+                    </div>
+
+                    <p>
+                        Specialised in glaucoma detection,
+                        monitoring, and vision protection.
+                    </p>
+
+                    <a
+                        href="rohan-kapoor.html"
+                        class="doctor-profile-link"
+                    >
+                        View Profile →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Dr. Meera Sharma -->
+
+            <article class="doctor-card">
+
+                <div class="doctor-card-image">
+
+                    <img
+                        src="assets/images/doctors/dr-meera-sharma.png"
+                        alt="Dr. Meera Sharma"
+                    >
+
+                </div>
+
+                <div class="doctor-card-content">
+
+                    <span class="doctor-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Dr. Meera Sharma
+                    </h3>
+
+                    <div class="doctor-specialty">
+                        Retina & Pediatric Specialist
+                    </div>
+
+                    <p>
+                        Providing specialised retinal and
+                        child-focused eye care.
+                    </p>
+
+                    <a
+                        href="meera-sharma.html"
+                        class="doctor-profile-link"
+                    >
+                        View Profile →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================== CTA ==================== -->
+
+    <section class="doctor-cta">
+
+        <div>
+
+            <span class="section-label">
+                NEED GUIDANCE?
+            </span>
+
+            <h2>
+                Not Sure Which
+                <span>Specialist</span>
+                You Need?
+            </h2>
+
+            <p>
+                Our team can help you find the right
+                care for your vision.
+            </p>
+
+        </div>
+
+
+        <a
+            href="#"
+            class="contact-trigger primary-btn"
+        >
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <img
+                    src="assets/images/general/visioncare-logo.png"
+                    alt="VisionCare Eye Hospital"
+                >
+
+                <p class="footer-tagline">
+                    Clear Vision. Better Life.
+                </p>
+
+                <p>
+                    Trusted eye care focused on advanced treatment,
+                    compassionate service, and healthier vision
+                    for every patient.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        f
+                    </a>
+
+                    <a href="#">
+                        ◎
+                    </a>
+
+                    <a href="#">
+                        𝕏
+                    </a>
+
+                    <a href="#">
+                        ▶
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Our Services
+                </a>
+
+                <a href="doctors.html">
+                    Our Doctors
+                </a>
+
+                <a href="appointment.html">
+                    Book Appointment
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+            <h3>Eye Care</h3>
+
+            <a href="eye-examination.html">Eye Examination</a>
+            <a href="cataract-care.html">Cataract Care</a>
+            <a href="glaucoma-care.html">Glaucoma Care</a>
+            <a href="lasik-care.html">LASIK & Refractive Care</a>
+            <a href="retina-care.html">Retina Care</a>
+            <a href="pediatric-eye-care.html">Pediatric Eye Care</a>
+        </div>
+
+
+            <!-- Contact -->
+
+            <div class="footer-column footer-contact">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ care@visioncare.com
+                </p>
+
+                <p>
+                    📍 VisionCare Eye Hospital,
+                    <br>
+                    New Delhi, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 VisionCare Eye Hospital.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
